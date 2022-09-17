@@ -14,6 +14,7 @@ const BotonCerrarSesion = () => {
 			navigate('/iniciar-sesion');
 		} catch(error){
 			console.log(error);
+
 		}
 	}
 
