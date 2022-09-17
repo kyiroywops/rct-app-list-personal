@@ -41,7 +41,7 @@ root.render(
             <Route path="/" element={<App/>}/>
             <Route path="/lista" element={<ListaDeGastos/>}/>
             <Route path="/editar/:id" element={<EditarGasto/>}/>
-            <Route path="/gastos-por-categoria" element={<GastosPorCategoria/>}/>
+            <Route path="/categorias" element={<GastosPorCategoria/>}/>
             <Route path="*" element={<h1>404</h1>}/>
 
           </Routes>
