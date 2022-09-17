@@ -10,6 +10,8 @@ import GastosPorCategoria from './componentes/GastosPorCategoria';
 import IniciarSesion from './componentes/IniciarSesion';
 import RegistroUsuarios from './componentes/RegistroUsuarios';
 import ListaDeGastos from './componentes/ListaDeGastos';
+import {Helmet} from 'react-helmet';
+import favicon from './imagenes/logo.png';
 
 
 
@@ -18,27 +20,34 @@ WebFont.load ({
     families: ['Work Sans:400,500,700', 'sans-serif']
   }
 });
-
+ 
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Contenedor>
-        <Routes>
-          <Route path="/iniciar-sesion" element={<IniciarSesion/>}/>
-          <Route path="/registro" element={<RegistroUsuarios/>}/>
-          <Route path="/" element={<App/>}/>
-          <Route path="/lista" element={<ListaDeGastos/>}/>
-          <Route path="/editar/:id" element={<EditarGasto/>}/>
-          <Route path="/gastos-por-categoria" element={<GastosPorCategoria/>}/>
-          <Route path="*" element={<h1>404</h1>}/>
+  <>
+    <Helmet>
+      <link rel="shortcut-icon" href={favicon} type="image/x-icon" />
+      <tittle>Control de Gastos</tittle>
+      
+    </Helmet>
+    <React.StrictMode>
+      <BrowserRouter>
+        <Contenedor>
+          <Routes>
+            <Route path="/iniciar-sesion" element={<IniciarSesion/>}/>
+            <Route path="/registro" element={<RegistroUsuarios/>}/>
+            <Route path="/" element={<App/>}/>
+            <Route path="/lista" element={<ListaDeGastos/>}/>
+            <Route path="/editar/:id" element={<EditarGasto/>}/>
+            <Route path="/gastos-por-categoria" element={<GastosPorCategoria/>}/>
+            <Route path="*" element={<h1>404</h1>}/>
 
-        </Routes>
-      </Contenedor>
-    </BrowserRouter>
+          </Routes>
+        </Contenedor>
+      </BrowserRouter>
 
-  </React.StrictMode>
+    </React.StrictMode>
+  </>
 );
 
