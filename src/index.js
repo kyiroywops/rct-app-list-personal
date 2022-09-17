@@ -3,6 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import WebFont from 'webfontloader';
+import Contenedor from './elementos/Contenedor';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import EditarGasto from './componentes/EditarGasto';
+import GastosPorCategoria from './componentes/GastosPorCategoria';
+import IniciarSesion from './componentes/IniciarSesion';
+import RegistroUsuarios from './componentes/RegistroUsuarios';
+import ListaDeGastos from './componentes/ListaDeGastos';
+
+
 
 WebFont.load ({
   google: {
@@ -15,7 +24,21 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Contenedor>
+        <Routes>
+          <Route path="/iniciar-sesion" element={<IniciarSesion/>}/>
+          <Route path="/registro" element={<RegistroUsuarios/>}/>
+          <Route path="/" element={<App/>}/>
+          <Route path="/lista" element={<ListaDeGastos/>}/>
+          <Route path="/editar/:id" element={<EditarGasto/>}/>
+          <Route path="/gastos-por-categoria" element={<GastosPorCategoria/>}/>
+          <Route path="*" element={<h1>404</h1>}/>
+
+        </Routes>
+      </Contenedor>
+    </BrowserRouter>
+
   </React.StrictMode>
 );
 
