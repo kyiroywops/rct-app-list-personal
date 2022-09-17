@@ -12,6 +12,7 @@ import RegistroUsuarios from './componentes/RegistroUsuarios';
 import ListaDeGastos from './componentes/ListaDeGastos';
 import {Helmet} from 'react-helmet';
 import favicon from './imagenes/logo.png';
+import Fondo from './elementos/Fondo';
 
 
 
@@ -46,6 +47,8 @@ root.render(
           </Routes>
         </Contenedor>
       </BrowserRouter>
+
+      <Fondo/>
 
     </React.StrictMode>
   </>
