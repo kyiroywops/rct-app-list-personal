@@ -13,7 +13,7 @@ const GastosPorCategoria = () => {
         <Header> 
            
             <BtnRegresar/>
-            <Titulo>Administrador de Gastos</Titulo>
+            <Titulo>Gastos por Categoría</Titulo>
            
            
 
