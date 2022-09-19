@@ -37,7 +37,7 @@ root.render(
         <Contenedor>
           <Routes>
             <Route path="/iniciar-sesion" element={<IniciarSesion/>}/>
-            <Route path="/registro" element={<RegistroUsuarios/>}/>
+            <Route path="/crear-cuenta" element={<RegistroUsuarios/>}/>
             <Route path="/" element={<App/>}/>
             <Route path="/lista" element={<ListaDeGastos/>}/>
             <Route path="/editar/:id" element={<EditarGasto/>}/>
