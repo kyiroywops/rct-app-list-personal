@@ -1,8 +1,8 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
-import {Header, Titulo, ContenedorBotones, ContenedorHeader} from '../elementos/Header';
+import {Header, Titulo, ContenedorHeader} from '../elementos/Header';
 import Boton from '../elementos/Boton';
-import {ContenedorFiltros, Formulario, Input, InputGrande, ContenedorBoton} from '../elementos/ElementosDeFormulario';
+import {Formulario, Input, ContenedorBoton} from '../elementos/ElementosDeFormulario';
 import { ReactComponent as SvgLogin } from '../imagenes/registro.svg';
 import styled from 'styled-components';
 
@@ -34,6 +34,11 @@ const RegistroUsuarios = () => {
                     placeholder="Email"
                     name="email"
                 
+                />
+                 <Input 
+                    type="password"
+                    placeholder="Contraseña"
+                    name="password"
                 />
                 <Input 
                     type="password"
