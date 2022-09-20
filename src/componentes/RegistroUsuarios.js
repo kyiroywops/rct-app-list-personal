@@ -5,6 +5,9 @@ import Boton from '../elementos/Boton';
 import {Formulario, Input, ContenedorBoton} from '../elementos/ElementosDeFormulario';
 import { ReactComponent as SvgLogin } from '../imagenes/registro.svg';
 import styled from 'styled-components';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import {useNavigate} from 'react-router-dom';
+import {auth} from '../firebase/firebaseConfig';
 
 
 
@@ -16,6 +19,7 @@ const Svg = styled(SvgLogin)`
 
 const RegistroUsuarios = () => {
 
+    const navigate = useNavigate();
     const [correo, establecerCorreo] = useState('');
     const [password, establecerPassword] = useState('');
     const [password2, establecerPassword2] = useState('');
@@ -38,7 +42,7 @@ const RegistroUsuarios = () => {
         
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const expresionRegular = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
         if(!expresionRegular.test(correo)){
@@ -53,6 +57,17 @@ const RegistroUsuarios = () => {
             console.log('Las contraseñas no coinciden');
             return;
         }
+
+        
+        try{
+            await createUserWithEmailAndPassword(auth, correo, password);
+			navigate('/');
+            
+        } catch(error){
+            console.log(error);
+        }
+            
+       
     }
 
     return (  
