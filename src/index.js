@@ -13,6 +13,7 @@ import ListaDeGastos from './componentes/ListaDeGastos';
 import {Helmet} from 'react-helmet';
 import favicon from './imagenes/logo.png';
 import Fondo from './elementos/Fondo';
+import {AuthProvider} from './contextos/AuthContext';
 
 
 
@@ -32,25 +33,29 @@ root.render(
       <tittle>Control de Gastos</tittle>
       
     </Helmet>
-    <React.StrictMode>
-      <BrowserRouter>
-        <Contenedor>
-          <Routes>
-            <Route path="/iniciar-sesion" element={<IniciarSesion/>}/>
-            <Route path="/crear-cuenta" element={<RegistroUsuarios/>}/>
-            <Route path="/" element={<App/>}/>
-            <Route path="/lista" element={<ListaDeGastos/>}/>
-            <Route path="/editar/:id" element={<EditarGasto/>}/>
-            <Route path="/categorias" element={<GastosPorCategoria/>}/>
-            <Route path="*" element={<h1>404</h1>}/>
 
-          </Routes>
-        </Contenedor>
-      </BrowserRouter>
+    <AuthProvider>
+      <React.StrictMode>
+        <BrowserRouter>
+          <Contenedor>
+            <Routes>
+              <Route path="/iniciar-sesion" element={<IniciarSesion/>}/>
+              <Route path="/crear-cuenta" element={<RegistroUsuarios/>}/>
+              <Route path="/" element={<App/>}/>
+              <Route path="/lista" element={<ListaDeGastos/>}/>
+              <Route path="/editar/:id" element={<EditarGasto/>}/>
+              <Route path="/categorias" element={<GastosPorCategoria/>}/>
+              <Route path="*" element={<h1>404</h1>}/>
 
-      <Fondo/>
+            </Routes>
+          </Contenedor>
+        </BrowserRouter>
 
-    </React.StrictMode>
+        <Fondo/>
+
+      </React.StrictMode>
+    </AuthProvider>
+    
   </>
 );
 
