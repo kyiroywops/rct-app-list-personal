@@ -3,6 +3,7 @@ import {ContenedorFiltros, Formulario, Input, InputGrande, ContenedorBoton} from
 import Boton from '../elementos/Boton';
 import {ReactComponent as IconoPlus} from '../imagenes/plus.svg';
 import SelectCategorias from './SelectCategorias';
+import DatePicker from './DatePicker';
 
 
 const FormularioGasto = () => {
@@ -31,7 +32,7 @@ const FormularioGasto = () => {
                     cambiarCategoria={cambiarCategoria}
                 
                 />
-                <p>Date Picker</p>
+                <DatePicker />
             </ContenedorFiltros>
 
             <div>
