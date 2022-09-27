@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { DateUtils } from 'react-day-picker';
-import 'react-day-picker/lib/style.css'
+import 'react-day-picker/lib/style.css';
 import theme from './../theme';
 
 import dateFnsFormat from 'date-fns/format';
